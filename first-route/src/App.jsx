@@ -6,6 +6,8 @@ import PageNotFound from "./components/page-not-found";
 import Login from "./components/login";
 import Register from "./components/register";
 import AuthLayout from "./components/auth";
+import About from "./pages/About";
+import CnsCity from "./pages/CnsCity";
 
 const App = () => {
   const [isLogin, setIsLogin] = useState("Login");
@@ -40,10 +42,10 @@ const App = () => {
       </nav>
       <Routes>
         <Route index element={<Dashboard />} />
-        <Route path="/about" element={"About"} />
+        <Route path="/about" element={<About />} />
         <Route path="concerts">
           <Route index element={<h1>ConcertHome</h1>} />
-          <Route path=":city" element={<h1>Concert City</h1>} />
+          <Route path=":city" element={<CnsCity />} />
           <Route path="trending" element={<h1>Trending...</h1>} />
         </Route>
         <Route element={<AuthLayout />}>
